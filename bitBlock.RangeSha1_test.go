@@ -1,12 +1,5 @@
 package bitBlock
 
-/*
- * Block.RangeSha1() test
- * (c) 2023 Sam Caldwell.  See License.txt
- *
- * Test for the RangeSha1() method.
- */
-
 import (
 	"bytes"
 	"testing"

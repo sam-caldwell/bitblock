@@ -5,13 +5,6 @@ import (
 	"testing"
 )
 
-/*
- * bitBlock.ReadBytes() test
- * (c) 2023 Sam Caldwell.  See License.txt
- *
- * Test the ReadBytes() method.
- */
-
 func TestBlock_ReadBytes(t *testing.T) {
 	expected := []byte("This is a test message")
 	var block Block

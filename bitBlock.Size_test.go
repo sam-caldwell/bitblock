@@ -2,13 +2,6 @@ package bitBlock
 
 import "testing"
 
-/*
- * bitBlock.Size() method unit test
- * (c) 2023 Sam Caldwell.  See License.txt
- *
- * Unit test for the size() method.
- */
-
 func TestBlock_Size(t *testing.T) {
 	var block Block
 

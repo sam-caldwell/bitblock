@@ -1,12 +1,5 @@
 package bitBlock
 
-/*
- * Block.Set() test
- * (c) 2023 Sam Caldwell.  See License.txt
- *
- * Test for the Set() method.
- */
-
 import (
 	"bytes"
 	"testing"

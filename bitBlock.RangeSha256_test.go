@@ -1,12 +1,5 @@
 package bitBlock
 
-/*
- * Block.RangeSha256() test
- * (c) 2023 Sam Caldwell.  See License.txt
- *
- * Test for the RangeSha256() method.
- */
-
 import (
 	"bytes"
 	"crypto/sha256"
