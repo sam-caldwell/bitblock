@@ -2,6 +2,7 @@ package bitBlock
 
 import (
 	"bytes"
+	"github.com/sam-caldwell/errors"
 	"testing"
 )
 
@@ -37,7 +38,7 @@ func TestRangeSha1(t *testing.T) {
 		stop := len(block.buffer) + 1
 
 		_, err = block.RangeSha1(start, stop)
-		if err == nil || err.Error() != "bounds check error" {
+		if err == nil || err.Error() != errors.BoundsCheckError {
 			t.Fatalf("Expected 'bounds check error', got %v", err)
 		}
 	})
@@ -48,7 +49,7 @@ func TestRangeSha1(t *testing.T) {
 		stop := len(block.buffer)
 
 		_, err = block.RangeSha1(start, stop)
-		if err == nil || err.Error() != "bounds check error (start)" {
+		if err == nil || err.Error() != errors.BoundsCheckError {
 			t.Fatalf("Expected 'bounds check error (start)', got %v", err)
 		}
 	})
@@ -59,7 +60,7 @@ func TestRangeSha1(t *testing.T) {
 		stop := -1
 
 		_, err = block.RangeSha1(start, stop)
-		if err == nil || err.Error() != "bounds check error (stop)" {
+		if err == nil || err.Error() != errors.BoundsCheckError {
 			t.Fatalf("Expected 'bounds check error (stop)', got %v", err)
 		}
 	})

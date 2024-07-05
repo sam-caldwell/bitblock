@@ -1,7 +1,8 @@
 package bitBlock
 
 import (
-	"errors"
+	"fmt"
+	"github.com/sam-caldwell/errors"
 	"testing"
 )
 
@@ -36,7 +37,7 @@ func TestBlock_ReadBit(t *testing.T) {
 	}
 
 	//Test bounds check
-	testBit(uint(8*len(blk.buffer)), 0, errors.New("index out of range"))
+	testBit(uint(8*len(blk.buffer)), 0, fmt.Errorf(errors.IndexOutOfRange))
 
 	//Test bits 0x00
 	testByte(0, 0x00)

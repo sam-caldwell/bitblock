@@ -3,6 +3,7 @@ package bitBlock
 import (
 	"crypto/sha256"
 	"fmt"
+	"github.com/sam-caldwell/errors"
 )
 
 // RangeSha256 - Calculate and return the Sha256 hash of a range of bytes within a given block of bytes
@@ -14,16 +15,8 @@ func (block *Block) RangeSha256(start, stop int) (hash []byte, err error) {
 	block.lock.Lock()
 	defer block.lock.Unlock()
 
-	if stop > len(block.buffer) {
-		return nil, fmt.Errorf("bounds check error")
-	}
-
-	if start < 0 {
-		return nil, fmt.Errorf("bounds check error (start)")
-	}
-
-	if stop < 0 {
-		return nil, fmt.Errorf("bounds check error (stop)")
+	if stop > len(block.buffer) || start < 0 || stop < 0 {
+		return nil, fmt.Errorf(errors.BoundsCheckError)
 	}
 
 	if start >= stop {
