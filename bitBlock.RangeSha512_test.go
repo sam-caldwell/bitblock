@@ -3,6 +3,7 @@ package bitBlock
 import (
 	"bytes"
 	"crypto/sha512"
+	"github.com/sam-caldwell/errors"
 	"testing"
 )
 
@@ -47,8 +48,8 @@ func TestRangeSha512(t *testing.T) {
 
 		_, err := block.RangeSha512(start, stop)
 
-		if err == nil || err.Error() != "bounds check error (start)" {
-			t.Fatalf("Expected 'bounds check error (start)', got %v", err)
+		if err == nil || err.Error() != errors.BoundsCheckError {
+			t.Fatalf("Expected '%s', got %v", errors.BoundsCheckError, err)
 		}
 	})
 
@@ -58,8 +59,8 @@ func TestRangeSha512(t *testing.T) {
 
 		_, err := block.RangeSha512(start, stop)
 
-		if err == nil || err.Error() != "bounds check error (stop)" {
-			t.Fatalf("Expected 'bounds check error (stop)', got %v", err)
+		if err == nil || err.Error() != errors.BoundsCheckError {
+			t.Fatalf("Expected '%s', got %v", errors.BoundsCheckError, err)
 		}
 	})
 

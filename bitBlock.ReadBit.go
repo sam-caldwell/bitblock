@@ -1,15 +1,8 @@
 package bitBlock
 
-/*
- * Block.ReadBit() method to read block bit by bit.
- * (c) 2023 Sam Caldwell.  See License.txt
- *
- * Given a block of data, read and return each bit
- * of content.
- */
-
 import (
 	"fmt"
+	"github.com/sam-caldwell/errors"
 )
 
 // ReadBit - Read the block one bit at a time, returning the bit at position p and return error if
@@ -19,7 +12,7 @@ func (block *Block) ReadBit(p uint) (bit bool, err error) {
 	defer block.lock.Unlock()
 
 	if p >= uint(8*len(block.buffer)) {
-		return false, fmt.Errorf("index out of range")
+		return false, fmt.Errorf(errors.IndexOutOfRange)
 	}
 	//Get the byte index
 	i := p / 8

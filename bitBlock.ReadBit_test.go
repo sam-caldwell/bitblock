@@ -1,12 +1,5 @@
 package bitBlock
 
-/*
- * Tests for Block.BitRead()
- * (c) 2023 Sam Caldwell.  See License.txt
- *
- * This file defines unit tests for Block.BitRead()
- */
-
 import (
 	"errors"
 	"testing"
