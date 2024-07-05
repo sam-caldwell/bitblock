@@ -1,4 +1,4 @@
-package bitBlock
+package bitblock
 
 // Set - Load data into the buffer
 func (block *Block) Set(b []byte) {

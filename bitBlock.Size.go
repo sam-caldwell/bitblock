@@ -1,4 +1,4 @@
-package bitBlock
+package bitblock
 
 // Size - Return the buffer size
 func (block *Block) Size() uint {

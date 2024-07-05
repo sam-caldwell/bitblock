@@ -1,4 +1,4 @@
-package bitBlock
+package bitblock
 
 // ReadBytes - Return sz number of bytes from the block buffer.  If sz==0, return it all.
 func (block *Block) ReadBytes(sz uint) (data []byte) {

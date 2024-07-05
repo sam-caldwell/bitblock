@@ -1,4 +1,4 @@
-package bitBlock
+package bitblock
 
 import (
 	"crypto/sha512"
